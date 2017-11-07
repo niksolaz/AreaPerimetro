@@ -22,16 +22,16 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    //Call Calculate area
     @IBAction func areaButton(_ sender: Any) {
         calculate(calc: "area")
     }
     
-    
+    //Call Calculate perimetro
     @IBAction func perimeterButton(_ sender: Any) {
         calculate(calc: "perimetro")
     }
-    
+    // Created unique func calculate for areaButton and perimeterButton
     func calculate(calc:String) {
         if let width = Double(widthField.text!) {
             if let height = Double(heightField.text!) {
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
             widthField.text = ""
         }
     }
-    
+    // Clean field larghezza and lunghezza and result 0
     @IBAction func clearButton(_ sender: Any) {
         widthField.text = ""
         heightField.text = ""
