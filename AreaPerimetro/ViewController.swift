@@ -25,6 +25,7 @@ class ViewController: UIViewController {
 
     @IBAction func areaButton(_ sender: Any) {
         let width = Double(widthField.text!)
+        
         let height = Double(heightField.text!)
         resultField.text = String(width! * height!)
     }
