@@ -24,19 +24,31 @@ class ViewController: UIViewController {
 
 
     @IBAction func areaButton(_ sender: Any) {
-        let width = Double(widthField.text!)
-        
-        let height = Double(heightField.text!)
-        resultField.text = String(width! * height!)
+        calculate(calc: "area")
     }
     
     
     @IBAction func perimeterButton(_ sender: Any) {
-        let width = Double(widthField.text!)
-        let height = Double(heightField.text!)
-        resultField.text = String( 2 * (width! + height!))
+        calculate(calc: "perimetro")
     }
     
+    func calculate(calc:String) {
+        if let width = Double(widthField.text!) {
+            if let height = Double(heightField.text!) {
+                let result:Double
+                if(calc == "area") {
+                    result = width * height
+                } else {
+                    result = 2 * (width + height)
+                }
+                resultField.text = String( result )
+            } else {
+                heightField.text = ""
+            }
+        } else {
+            widthField.text = ""
+        }
+    }
     
     @IBAction func clearButton(_ sender: Any) {
         widthField.text = ""
