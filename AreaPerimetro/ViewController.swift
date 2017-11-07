@@ -9,17 +9,40 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var widthField: UITextField!
+    
+    @IBOutlet weak var heightField: UITextField!
+    
+    @IBOutlet weak var resultField: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    @IBAction func areaButton(_ sender: Any) {
+        let width = Double(widthField.text!)
+        let height = Double(heightField.text!)
+        resultField.text = String(width! * height!)
     }
-
-
+    
+    
+    @IBAction func perimeterButton(_ sender: Any) {
+        let width = Double(widthField.text!)
+        let height = Double(heightField.text!)
+        resultField.text = String( 2 * (width! + height!))
+    }
+    
+    
+    @IBAction func clearButton(_ sender: Any) {
+        widthField.text = ""
+        heightField.text = ""
+        resultField.text = "0"
+    }
+    
+    
 }
 
